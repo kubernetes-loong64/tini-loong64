@@ -4,8 +4,8 @@
 
 <p align="center"><img src="https://img.shields.io/badge/Tini%20LoongArch64%20%E9%BE%99%E8%8A%AF%E6%9E%B6%E6%9E%84%E5%8F%91%E8%A1%8C%E7%89%88-blue?logo=docker&logoColor=white" alt="Tini LoongArch64 龙芯架构发行版"></p>
 
-Build [Tini](https://github.com/krallin/tini) — a tiny but valid `init` for containers — for the **LoongArch64 (loong64)
-** architecture via CI/CD.
+Build [Tini](https://github.com/krallin/tini) — a tiny but valid `init` for containers — for the
+**LoongArch64 (loong64)** architecture via CI/CD.
 
 ## How it works
 
