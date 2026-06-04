@@ -57,7 +57,7 @@ jobs:
       - name: Install build tools
         run: |
           apt update
-          apt install -y git cmake make golang file
+          apt install -y git cmake make golang file gcc-loongarch64-linux-gnu
       #- name: Apply patches
       #  working-directory: tini
       #  run: git apply ../*.patch
