@@ -64,8 +64,8 @@ jobs:
       - name: Build tini
         working-directory: tini
         run: |
-          cmake .
-          make
+          CC=loongarch64-linux-gnu-gcc cmake .
+          CC=loongarch64-linux-gnu-gcc make
       - name: Print binary SHA-256 checksums
         working-directory: tini
         run: |
