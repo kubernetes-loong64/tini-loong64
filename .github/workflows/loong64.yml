@@ -46,18 +46,15 @@ jobs:
           fi
           echo "IS_STABLE=$IS_STABLE"
           echo "IS_STABLE=$IS_STABLE" >> ${GITHUB_OUTPUT}
-      - name: Clone tini
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          repository: krallin/tini
-          ref: ${{ env.TINI_BRANCH }}
-          path: tini
-      - name: ls
-        run: ls -lah
       - name: Install build tools
         run: |
           apt update
           apt install -y git cmake make golang file gcc-loongarch64-linux-gnu
+      - name: Clone tini
+        run: |
+          git clone --branch ${{ env.TINI_BRANCH }} --depth 1 https://github.com/krallin/tini.git tini
+      - name: ls
+        run: ls -lah
       #- name: Apply patches
       #  working-directory: tini
       #  run: git apply ../*.patch
