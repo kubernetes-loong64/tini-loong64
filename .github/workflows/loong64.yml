@@ -419,7 +419,7 @@ jobs:
 
           | File                         | Download                                                                     |
           |------------------------------|------------------------------------------------------------------------------|
-          | `docker-init`                | [docker-init-static](${{ env.BASE_URL }}/docker-init)                        |
+          | `docker-init`                | [docker-init](${{ env.BASE_URL }}/docker-init)                               |
           | `docker-init-static`         | [docker-init-static](${{ env.BASE_URL }}/docker-init-static)                 |
           | `${{ env.ANOLIS_RPM_NAME }}` | [${{ env.ANOLIS_RPM_NAME }}](${{ env.BASE_URL }}/${{ env.ANOLIS_RPM_NAME }}) |
           | `${{ env.DEBIAN_DEB_NAME }}` | [${{ env.DEBIAN_DEB_NAME }}](${{ env.BASE_URL }}/${{ env.DEBIAN_DEB_NAME }}) |
