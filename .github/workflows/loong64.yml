@@ -66,7 +66,7 @@ jobs:
           apt install -y git cmake make golang file gcc-loongarch64-linux-gnu
       - name: Clone tini
         run: |
-          git clone --branch ${{ env.TINI_BRANCH }} --depth 1 https://github.com/krallin/tini.git tini
+          git clone --branch ${{ env.TINI_BRANCH }} https://github.com/krallin/tini.git tini
       - name: Extract tini version
         id: version
         working-directory: tini
