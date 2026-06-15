@@ -300,6 +300,7 @@ jobs:
           install -m 755 artifacts/docker-init-static $PKG_ROOT/usr/bin/docker-init
           install -m 644 LICENSE $PKG_ROOT/usr/share/doc/docker-init/copyright
 
+          mkdir -p $PKG_ROOT/DEBIAN
           cat > $PKG_ROOT/DEBIAN/control << EOF
           Package: docker-init
           Version: ${{ env.VERSION }}-${{ env.RELEASE }}
