@@ -186,8 +186,8 @@ jobs:
           find ~/rpmbuild
           cp artifacts/docker-init-static ~/rpmbuild/BUILD/docker-init
           cp LICENSE ~/rpmbuild/BUILD/
-          cp tini.spec ~/rpmbuild/SPECS/
-          rpmbuild -ba --target ${{ env.ARCH }} ~/rpmbuild/SPECS/tini.spec \
+          cp docker-init.spec ~/rpmbuild/SPECS/
+          rpmbuild -ba --target ${{ env.ARCH }} ~/rpmbuild/SPECS/docker-init.spec \
             --define "version ${{ env.VERSION }}" \
             --define "release ${{ env.RELEASE }}"
           mkdir -p rpms
@@ -196,7 +196,7 @@ jobs:
       - name: List RPM files
         id: rpm-file
         run: |
-          ANOLIS_RPM_NAME=tini-${{ env.VERSION }}-${{ env.RELEASE }}${{ env.DIST }}.${{ env.ARCH }}.rpm
+          ANOLIS_RPM_NAME=docker-init-${{ env.VERSION }}-${{ env.RELEASE }}${{ env.DIST }}.${{ env.ARCH }}.rpm
           echo "ANOLIS_RPM_NAME=$ANOLIS_RPM_NAME"
           echo "ANOLIS_RPM_NAME=$ANOLIS_RPM_NAME" >> $GITHUB_OUTPUT
           echo "ANOLIS_RPM_NAME=$ANOLIS_RPM_NAME" >> $GITHUB_ENV
@@ -293,13 +293,13 @@ jobs:
         run: |
           PKG_ROOT=$(mktemp -d)
           mkdir -p $PKG_ROOT/usr/bin
-          mkdir -p $PKG_ROOT/usr/share/doc/tini
+          mkdir -p $PKG_ROOT/usr/share/doc/docker-init
 
           install -m 755 artifacts/docker-init-static $PKG_ROOT/usr/bin/docker-init
-          install -m 644 LICENSE $PKG_ROOT/usr/share/doc/tini/copyright
+          install -m 644 LICENSE $PKG_ROOT/usr/share/doc/docker-init/copyright
 
           cat > $PKG_ROOT/DEBIAN/control << EOF
-          Package: tini
+          Package: docker-init
           Version: ${{ env.VERSION }}-${{ env.RELEASE }}
           Architecture: ${{ env.ARCH }}
           Maintainer: 徐晓伟 <xuxiaowei@xuxiaowei.com.cn>
@@ -319,7 +319,7 @@ jobs:
       - name: List DEB files
         id: deb-file
         run: |
-          DEBIAN_DEB_NAME=tini_${{ env.VERSION }}-${{ env.RELEASE }}_${{ env.ARCH }}.deb
+          DEBIAN_DEB_NAME=docker-init_${{ env.VERSION }}-${{ env.RELEASE }}_${{ env.ARCH }}.deb
           echo "DEBIAN_DEB_NAME=$DEBIAN_DEB_NAME"
           echo "DEBIAN_DEB_NAME=$DEBIAN_DEB_NAME" >> $GITHUB_OUTPUT
           echo "DEBIAN_DEB_NAME=$DEBIAN_DEB_NAME" >> $GITHUB_ENV
