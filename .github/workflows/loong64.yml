@@ -73,6 +73,8 @@ jobs:
         run: |
           VERSION=$(git describe --tags --abbrev=0)
           echo "VERSION=$VERSION"
+          VERSION=$(echo $VERSION | awk -F'v' '{print $2}')
+          echo "VERSION=$VERSION"
           echo "VERSION=$VERSION" >> ${GITHUB_OUTPUT}
       - name: ls
         run: ls -lah
