@@ -111,7 +111,6 @@ jobs:
       - name: Print tini version
         working-directory: tini
         run: |
-          ./tini --version
           ./tini-static --version
 
   release:
