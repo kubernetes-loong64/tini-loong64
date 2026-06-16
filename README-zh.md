@@ -64,6 +64,13 @@ echo "FCF8724722CCBF9F51B1FBE376532BE7E3013105:6:" | gpg --import-ownertrust
 gpg --import /tmp/xxx
 ```
 
+## 文档
+
+> 适用于：moby-loong64、tini-loong64、cli-loong64、runc-loong64、containerd-loong64
+
+- [Install containerd and docker binaries on LoongArch](https://xuxiaowei.io/t/754)
+- [Install containerd and docker RPM packages on LoongArch](https://xuxiaowei.io/t/811)
+
 ## 许可证
 
 [MIT License](LICENSE)
