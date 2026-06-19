@@ -279,7 +279,7 @@ jobs:
       RAW_VERSION: ${{ needs.build.outputs.RAW_VERSION }}
       TINI_BRANCH: ${{ needs.build.outputs.TINI_BRANCH }}
       RELEASE: ${{ needs.build.outputs.RELEASE }}
-      ARCH: loongarch64
+      ARCH: loong64
       VERSION: ${{ needs.build.outputs.VERSION }}
     steps:
       - name: Checkout
